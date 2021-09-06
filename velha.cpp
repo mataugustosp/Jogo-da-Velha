@@ -25,7 +25,7 @@ int VerificaVelha( int velha[3][3] )
 	}
 	// Caso para jogo empatado
 	else{
-		return 0; 
+		return 0; /*!< retorna zero para teste */
 	}
 }
 
