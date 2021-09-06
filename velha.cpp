@@ -19,11 +19,13 @@ int VerificaVelha( int velha[3][3] )
 	if(Vence(velha,1)){
 		return 1;
 	}
+	//Verifica se o O venceu 
 	else if(Vence(velha,2)){
 		return 1;
 	}
+	// Caso para jogo empatado
 	else{
-		return 0; /*!< retorna zero para teste */
+		return 0; 
 	}
 }
 
