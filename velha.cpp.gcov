@@ -1,8 +1,8 @@
         -:    0:Source:velha.cpp
         -:    0:Graph:velha.gcno
-        -:    0:Data:-
-        -:    0:Runs:0
-        -:    0:Programs:0
+        -:    0:Data:velha.gcda
+        -:    0:Runs:3
+        -:    0:Programs:1
         -:    1:/**
         -:    2: * \file  velha.cpp
         -:    3: */
@@ -18,9 +18,46 @@
         -:   13: *  Descrever o que a funcao faz
         -:   14: */ 
         -:   15:
-    #####:   16:int VerificaVelha( int velha[3][3] )
+        3:   16:int VerificaVelha( int velha[3][3] )
         -:   17:{
-    #####:   18:	return 0; /*!< retorna zero para teste */
-        -:   19:}
-        -:   20:
-        -:   21:
+        -:   18:	// Verifica se o X venceu 
+        3:   19:	if(Vence(velha,1)){
+        3:   20:		return 1;
+        -:   21:	}
+        -:   22:	else{
+    #####:   23:		return 0; /*!< retorna zero para teste */
+        -:   24:	}
+        3:   25:}
+        -:   26:
+        -:   27:/*!< Funcao usada para verificar e retornar se X ou O venceu */
+        3:   28:int Vence(int velha[3][3], int numero){
+        3:   29:	if(velha[0][0] == numero && velha[1][1] == numero && velha[2][2] == numero){
+    #####:   30:		return 1;
+        -:   31:	}
+        3:   32:	else if(velha[0][2] == numero && velha[1][1] == numero && velha[2][0] == numero){
+    #####:   33:		return 1;
+        -:   34:	}
+        3:   35:	else if(velha[0][0] == numero && velha[1][0] == numero && velha[2][0] == numero){
+    #####:   36:		return 1;
+        -:   37:	}
+        3:   38:	else if(velha[0][1] == numero && velha[1][1] == numero && velha[2][1] == numero){
+    #####:   39:		return 1;
+        -:   40:	}
+        3:   41:	else if(velha[0][2] == numero && velha[1][2] == numero && velha[2][2] == numero){
+        3:   42:		return 1;
+        -:   43:	}
+    #####:   44:	else if(velha[0][0] == numero && velha[0][1] == numero && velha[0][2] == numero){
+    #####:   45:		return 1;
+        -:   46:	}
+    #####:   47:	else if(velha[1][0] == numero && velha[1][1] == numero && velha[1][2] == numero){
+    #####:   48:		return 1;
+        -:   49:	}
+    #####:   50:	else if(velha[2][0] == numero && velha[2][1] == numero && velha[2][2] == numero){
+    #####:   51:		return 1;
+        -:   52:	}
+        -:   53:	else{
+    #####:   54:		return 0;
+        -:   55:	}
+        3:   56:}
+        -:   57:
+        -:   58:
