@@ -24,8 +24,11 @@ int VerificaVelha( int velha[3][3] )
 		return 1;
 	}
 	// Caso para jogo empatado
+	else if(!Vence(velha,1) && !Vence(velha,2) && !Zero(velha)){
+		return 0; 
+	}
 	else{
-		return 0; /*!< retorna zero para teste */
+		return 2;
 	}
 }
 
@@ -58,6 +61,16 @@ int Vence(int velha[3][3], int numero){
 	else{
 		return 0;
 	}
+}
+int Zero(int velha[3][3]){
+	for(int x = 0; x<3;x++){
+		for(int y = 0; y<3;y++){
+			if(!velha[x][y]){
+				return 1;
+			}
+		}
+	}
+	return 0;
 }
 
 
