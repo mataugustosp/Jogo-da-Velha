@@ -73,8 +73,8 @@ TEST_CASE( "Jogo empatado" ){
 // O jogo indefinido é aquele que ainda não está empatado e também ão tem nenhum vencedor 
 TEST_CASE( "Jogo indefinido" ){
 	int teste1[3][3]= { { 2, 0, 1 }, 
-	                    { 0, 2, 2 },
-						{ 2, 2, 0 }};
+	                    { 0, 0, 2 },
+						{ 1, 2, 0 }};
     REQUIRE( VerificaVelha(teste1) == -1 );
 	int teste2[3][3]= { { 1, 0, 1 }, 
 	                    { 2, 1, 2 },
@@ -104,17 +104,17 @@ TEST_CASE( "Jogo impossível pelas regras" ){
 			int teste1[3][3]= { { 2, 2, 0 }, 
 	                    		{ 2, 1, 0 },
 								{ 2, 0, 0 }};
-    		REQUIRE( VerificaVelha(teste1) == -1 );
+    		REQUIRE( VerificaVelha(teste1) == -2 );
 		}
 	}
 	WHEN("Ambos os jogadores ganham a partida"){
 		int teste1[3][3]= { { 2, 1, 0 }, 
 	                    	{ 2, 1, 0 },
 							{ 2, 1, 0 }};
-    	REQUIRE( VerificaVelha(teste1) == -1 );
+    	REQUIRE( VerificaVelha(teste1) == -2 );
 		int teste2[3][3]= { { 2, 2, 2 }, 
 	                    	{ 1, 1, 1 },
 							{ 0, 0, 0 }};
-    	REQUIRE( VerificaVelha(teste2) == -1 );
+    	REQUIRE( VerificaVelha(teste2) == -2 );
 	}
 }

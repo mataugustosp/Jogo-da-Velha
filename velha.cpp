@@ -4,6 +4,8 @@
 
 
 #include "velha.hpp"
+#include <iostream>
+using namespace std;
 
 /** 
  * @brief verifica situacao do jogo da velha  
@@ -15,8 +17,11 @@
 
 int VerificaVelha( int velha[3][3] )
 {
+	if((Vence(velha,1) && Vence(velha,2)) || confereNum(velha)){
+		return -2;
+	}
 	// Verifica se o X venceu 
-	if(Vence(velha,1)){
+	else if(Vence(velha,1)){
 		return 1;
 	}
 	//Verifica se o O venceu 
@@ -27,9 +32,7 @@ int VerificaVelha( int velha[3][3] )
 	else if(!Vence(velha,1) && !Vence(velha,2) && !Zero(velha)){
 		return 0; 
 	}
-	else{
-		return -1;
-	}
+	return -1;
 }
 /*!< Funcao usada para verificar e retornar se X ou O venceu */
 int Vence(int velha[3][3], int numero){
@@ -70,6 +73,30 @@ int Zero(int velha[3][3]){
 		}
 	}
 	return 0;
+}
+
+int confereNum(int velha[3][3]){
+	int um = 0;
+	int dois = 0;
+	for(int x = 0; x<3;x++){
+		for(int y = 0; y<3;y++){
+			if(velha[x][y] == 1) 
+			{
+				um++;
+			}
+			else if(velha[x][y] == 2)
+			{
+				dois++;
+			}
+		}
+	}
+	if(um + 1 < dois || dois + 1 < um ){
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
 }
 
 

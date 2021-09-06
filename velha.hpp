@@ -4,4 +4,4 @@ int Vence(int velha[3][3], int numero);
 
 int Zero(int velha[3][3]);
 
-
+int confereNum(int velha[3][3]);
