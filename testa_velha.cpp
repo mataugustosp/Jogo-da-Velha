@@ -34,15 +34,28 @@ TEST_CASE( "Jogo tem ganhador" ) {
     		REQUIRE( VerificaVelha(teste1) == 1 );
 		}
 	}
-	WHEN(" X é o vencedor "){
-		THEN("X ganha na vertical"){
+	WHEN(" Y é o vencedor "){
+		THEN("Y ganha na vertical"){
 			int teste1[3][3]= { { 2, 0, 1 }, 
 	                      		{ 2, 0, 1 },
-						  		{ 0, 2, 1 }
+						  		{ 2, 1, 0 }
 					  						};
     		REQUIRE( VerificaVelha(teste1) == 1 );
 		}
-		
+		THEN("Y ganha na diagonal"){
+			int teste1[3][3]= { { 1, 0, 2}, 
+	                      		{ 0, 2, 0 },
+						  		{ 2, 1, 1 }
+					  						};
+    		REQUIRE( VerificaVelha(teste1) == 1 );
+		}
+		THEN("Y ganha na horizontal"){
+			int teste1[3][3]= { { 2, 2, 2 }, 
+	                      		{ 1, 0, 1 },
+						  		{ 0, 1, 0 }
+					  						};
+    		REQUIRE( VerificaVelha(teste1) == 1 );
+		}
 	}
 	
 }
