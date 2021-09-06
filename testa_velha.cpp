@@ -89,3 +89,32 @@ TEST_CASE( "Jogo indefinido" ){
 						{ 2, 0, 0 }};
     REQUIRE( VerificaVelha(teste4) == -1 );
 }
+
+// Test case 4
+// O jogo indefinido é aquele que ainda não está empatado e também ão tem nenhum vencedor 
+TEST_CASE( "Jogo impossível pelas regras" ){
+	WHEN("As jogadas de um jogador são muito maiores que as de outro"){
+		THEN("Há muito mais X do que O"){
+			int teste1[3][3]= { { 0, 0, 2 }, 
+	                    		{ 0, 1, 0 },
+								{ 1, 1, 0 }};
+    		REQUIRE( VerificaVelha(teste1) == -2 );
+		}
+		THEN("Há muito mais O do que X"){
+			int teste1[3][3]= { { 2, 2, 0 }, 
+	                    		{ 2, 1, 0 },
+								{ 2, 0, 0 }};
+    		REQUIRE( VerificaVelha(teste1) == -1 );
+		}
+	}
+	WHEN("Ambos os jogadores ganham a partida"){
+		int teste1[3][3]= { { 2, 1, 0 }, 
+	                    	{ 2, 1, 0 },
+							{ 2, 1, 0 }};
+    	REQUIRE( VerificaVelha(teste1) == -1 );
+		int teste2[3][3]= { { 2, 2, 2 }, 
+	                    	{ 1, 1, 1 },
+							{ 0, 0, 0 }};
+    	REQUIRE( VerificaVelha(teste2) == -1 );
+	}
+}

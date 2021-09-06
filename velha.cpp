@@ -31,7 +31,6 @@ int VerificaVelha( int velha[3][3] )
 		return -1;
 	}
 }
-
 /*!< Funcao usada para verificar e retornar se X ou O venceu */
 int Vence(int velha[3][3], int numero){
 	if(velha[0][0] == numero && velha[1][1] == numero && velha[2][2] == numero){
