@@ -15,6 +15,7 @@ using namespace std;
  *  Descrever o que a funcao faz
  */ 
 
+/*! Funcao principal do programa */
 int VerificaVelha( int velha[3][3] )
 {
 	if((Vence(velha,1) && Vence(velha,2)) || confereNum(velha)){
@@ -34,7 +35,7 @@ int VerificaVelha( int velha[3][3] )
 	}
 	return -1;
 }
-/*!< Funcao usada para verificar e retornar se X ou O venceu */
+/*! Funcao usada para verificar e retornar se X ou O venceu */
 int Vence(int velha[3][3], int numero){
 	if(velha[0][0] == numero && velha[1][1] == numero && velha[2][2] == numero){
 		return 1;
@@ -64,6 +65,9 @@ int Vence(int velha[3][3], int numero){
 		return 0;
 	}
 }
+///
+/// Função usada para conferir se há algun zero na matriz 
+///
 int Zero(int velha[3][3]){
 	for(int x = 0; x<3;x++){
 		for(int y = 0; y<3;y++){
@@ -74,7 +78,9 @@ int Zero(int velha[3][3]){
 	}
 	return 0;
 }
-
+///
+/// Função usada para conferir se a quantidade de um dos simbolos é muito maior que a do outro
+///
 int confereNum(int velha[3][3]){
 	int um = 0;
 	int dois = 0;

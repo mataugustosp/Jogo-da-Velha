@@ -9,7 +9,7 @@
 #include "catch.hpp"
   
 
-// Test case 1 
+// Test case 1: Jogo tem ganhador 
 TEST_CASE( "Jogo tem ganhador" ) {
 	WHEN(" X é o vencedor "){
 		THEN("X ganha na vertical"){
@@ -90,8 +90,7 @@ TEST_CASE( "Jogo indefinido" ){
     REQUIRE( VerificaVelha(teste4) == -1 );
 }
 
-// Test case 4
-// O jogo indefinido é aquele que ainda não está empatado e também ão tem nenhum vencedor 
+// Test case 4: Jogoi é impossível pelas regras
 TEST_CASE( "Jogo impossível pelas regras" ){
 	WHEN("As jogadas de um jogador são muito maiores que as de outro"){
 		THEN("Há muito mais X do que O"){
