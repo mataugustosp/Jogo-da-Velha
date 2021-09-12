@@ -8,11 +8,9 @@
 using namespace std;
 
 /** 
- * @brief verifica situacao do jogo da velha  
- * @author Programador 
- * @param  velha descreve o parametro
- * 
- *  Descrever o que a funcao faz
+ * @brief Este programa irá verificar a situação do jogo da velha 
+ * @author Matheus Augusto Silva Pinho
+ * @param  velha Parametro principal do programa que terá a situação do jogo
  */ 
 
 /*! Funcao principal do programa */
