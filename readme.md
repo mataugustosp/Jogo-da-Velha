@@ -2,7 +2,7 @@
 
 Trabalho disciplina de métodos de programação Universidade de Brasília UnB
 
-## 🚀 Execução
+##🚀 Execução
 
 Para compilar o programa utilizar 
 ```
